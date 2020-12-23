@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width
+    , initial-scale=1.0"
+    />
+    <title>Bài tập về nhà ngày 22.12.2020 lớp ReactJS</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <script>
+      // Bài 1: Cho 1 mảng các object chứa thông tin sinh viên dạng { name: ''Huy'', gender: ''Male'', age: 20 }.
+      // Viết hàm tính ra số tuổi trung bình của toàn bộ sinh viên.
+      let arr = [
+        { name: "Huy", gender: "Male", age: 20 },
+        { name: "Hoàng", gender: "Male", age: 25 },
+        { name: "thanh", gender: "Female", age: 18 },
+        { name: "Linh", gender: "Female", age: 22 },
+        { name: "an", gender: "Female", age: 30 },
+      ];
+      function avgAge() {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i].age;
+        }
+        return sum / arr.length;
+      }
+      console.log(avgAge());
+
+      //   Bài 2: Cho 1 mảng các object chứa thông tin sinh viên dạng { name: ''Huy'', gender: ''Male'', age: 20 }.
+      //   Viết hàm sắp xếp lại mảng trên theo tuổi học viên từ cao đến thấp.
+
+      function sortAge() {
+        arr.sort(function (a, b) {
+          return b.age - a.age;
+        });
+        return arr;
+      }
+      console.log(sortAge());
+
+      //   Bài 3: Cho 1 mảng các object chứa thông tin sinh viên dạng { name: ''Huy'', gender: ''Male'', age: 20 }.
+      //   Viết hàm sắp xếp lại mảng trên theo tên học viên (không phân biệt hoa thường).
+      let arr1 = [
+        { name: "Huy", gender: "Male", age: 20 },
+        { name: "Hoàng", gender: "Male", age: 25 },
+        { name: "thanh", gender: "Female", age: 18 },
+        { name: "Linh", gender: "Female", age: 22 },
+        { name: "an", gender: "Female", age: 30 },
+      ];
+      function sortName() {
+        arr1.sort(function (a, b) {
+          let nameA = a.name.toUpperCase();
+          let nameB = b.name.toUpperCase();
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+          if ((nameA = nameB)) {
+            return 0;
+          }
+        });
+        return arr1;
+      }
+      console.log(sortName());
+
+      //   Bài 4: Cho 1 mảng các object chứa thông tin sinh viên dạng { name: ''Huy'', gender: ''Male'', age: 20 }.
+      //    Viết hàm lọc ra những sinh viên nào có tên bắt đầu bằng chữ ''H'' hoặc ''h''.
+
+      let arr2 = [
+        { name: "Huy", gender: "Male", age: 20 },
+        { name: "Hoàng", gender: "Male", age: 25 },
+        { name: "thanh", gender: "Female", age: 18 },
+        { name: "Linh", gender: "Female", age: 22 },
+        { name: "an", gender: "Female", age: 30 },
+      ];
+
+      function filterName() {
+        let arr3 = arr2.filter((ele) => {
+          return ele.name.toUpperCase().startsWith("H");
+        });
+        return arr3;
+      }
+
+      console.log(filterName());
+    </script>
+  </body>
+</html>
